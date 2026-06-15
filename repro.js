@@ -6,7 +6,8 @@ const runRolldown = () => {
   spawnSync("./node_modules/.bin/rolldown", ["-c", "rolldown.config.js"], { stdio: "inherit" });
   const distFileMap = {};
   for (const item of fs.readdirSync("./dist").sort()) {
-    distFileMap[item] = fs.readFileSync("./dist/" + item, "utf8");
+    const relativePath = "./dist/" + item;
+    distFileMap[relativePath] = fs.readFileSync(relativePath, "utf8");
   }
   return distFileMap;
 };
