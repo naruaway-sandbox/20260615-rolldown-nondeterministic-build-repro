@@ -1,8 +1,8 @@
 # 20260615-rolldown-nondeterministic-build-repro
 
-Run `pnpm run repro`
+Run `pnpm run repro`.
 
-For example, in my environment (MacBook), the output was like the following:
+For example, on my MacBook, the output looked like this:
 
 ```
 This output appeared 52 times out of 100:
@@ -17,4 +17,4 @@ This output appeared 48 times out of 100:
 }
 ```
 
-It looks like default import with different symbol names for externalized dependency causes this non deterministic build.
+This repro imports the same external Node built-in module (`node:process`) under two different local names: `process` in `src/mod0.js` and `process2` in `src/mod1.js`. Rolldown nondeterministically chooses one of those names for the generated default import, so both chunks sometimes use `process` and sometimes use `process2`.
