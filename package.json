@@ -1,0 +1,18 @@
+{
+  "name": "@repo/20260615-rolldown-nondeterministic-build-repro",
+  "type": "module",
+  "scripts": {
+    "repro": "node ./repro.js"
+  },
+  "devDependencies": {
+    "rolldown": "1.1.1"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.3.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.6.0"
+}
