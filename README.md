@@ -1,5 +1,8 @@
 # 20260615-rolldown-nondeterministic-build-repro
 
+> [!NOTE]
+> I reported this in https://github.com/rolldown/rolldown/issues/9754.
+
 Run `pnpm run repro`.
 
 For example, on my MacBook, the output looked like this:
